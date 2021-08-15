@@ -8,14 +8,59 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
-    <form id="#form">
-        <input id="date" type="date">
-        <input id="lucky_num" type="number">
-        <button type="submit">Submit</button>
-    </form>
 
-    <div class="output">
+    <!--===== NAVIGATION =====-->
+
+    <nav class="navigation ">
+        <div class="nav-brand">luckybirthday</div>
+    </nav>
+
+    <!-- ==== MAIN ====== -->
+    <main>
+        
+        <div class="privacy-note">
+            <div class="privacy-msg">Privacy Note: We don't store your data</div>
+            <div class="privacy-close">X</div>
+        </div>
+
+        <div class="container-center container">
+
+            
+
+            <div class="row1">
+                <div class="column column1"> <img src="./bday.svg" alt=""></div>
+                <div class="column column2"><h1>Is your birthday lucky?</h1></div>
+            </div>
+
+<!--             
+            <div class="modal" id="modal-one">
+                <div class="modal-bg modal-exit"></div>
+                <div class="modal-container">
+                  <h1 style="margin:1.8rem">Privacy Note: We don't store your data</h1>
+                  <button class="modal-close modal-exit">X</button>
+                </div>
+              </div>
+            </div> -->
+
+            <form id="#form">
+                <div class="row container-center"  style="flex-direction: column; justify-content: center; align-items: center;">
+                    <label id="date_label" for="date" >Enter birth date</label>
+                    <input id="date" type="date">
+                </div>
+                <div class="row container-center">
+                    <input id="lucky_num" type="number" placeholder="Enter lucky number">
+                </div>
+                <div class="row container-center">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+            <div class="output">
+                </div>
+        </div>
+    </main>
+
+
 
     </div>
     <script src="./app.js"></script>

@@ -3,20 +3,26 @@ const input_date = document.querySelector("#date");
 const input_num = document.querySelector("#lucky_num");
 const form = document.querySelector("form");
 
+const privacy_close = document.querySelector(".privacy-close");
+const privacy_note = document.querySelector(".privacy-note");
+
+privacy_close.addEventListener("click", function(){
+    privacy_note.style.display = "none";
+})
+
 form.addEventListener('submit', (e)=>{
 
     e.preventDefault();
 
-    let date_val = parseInt(((date.value).split('-')).join(""));
+    let date_val = (date.value).replaceAll('-',"");
 
     let sum = 0;
-    while(date_val > 0){
-        sum += parseInt(date_val % 10);
-        date_val = parseInt(date_val / 10);
+    for(letter of date_val){
+        sum += Number(letter)
     }
 
     let is_lucky = false;
-    if(sum % input_num.value === 0){
+    if(sum % Number(input_num.value) === 0){
         is_lucky = true;
     }
 
