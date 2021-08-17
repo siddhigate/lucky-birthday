@@ -185,6 +185,22 @@ button{
     padding: 0.5rem 1rem;
 }
 
+.output-msg{
+    width:80%;
+    margin: auto;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.output-msg{
+    width: 100%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
 
 /* footer */
 
@@ -274,4 +290,12 @@ button{
     .output-msg{
         order: 0;
     }
+    .output-msg{
+        flex-direction: column;
+    }
+
+    .output-img{
+        order:1;
+    }
+
 }

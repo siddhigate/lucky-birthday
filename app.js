@@ -4,7 +4,8 @@ const input_num = document.querySelector("#lucky_num");
 const form = document.querySelector("form");
 
 // output
-const output = document.querySelector(".output_msg");
+const output_div = document.querySelector(".output-msg");
+const output_container = document.querySelector(".output-container");
 const error_msg = document.querySelector(".error-msg");
 
 const privacy_close = document.querySelector(".privacy-close");
@@ -18,7 +19,7 @@ function isValidInput(){
 
     if(input_date.value && input_num.value){
 
-        if(input_num.value > 0){
+        if(Number(input_num.value) > 0){
             return true;
         }
         else {
@@ -38,16 +39,22 @@ function resetError(){
     error_msg.innerText = "";
 }
 
+function resetOutput(){
+    output_container.style.background = "white";
+    output_div.innerHTML = "";
+}
 
 function displayResult(isLucky){
 
     if(isLucky){
-        document.querySelector(".output-img").src = "./lucky.svg";
-        document.querySelector(".output-msg").innerText = "Yayy! Your birthday is lucky :)"; 
+        output_div.innerHTML = "";
+        output_div.innerHTML = `<div><img src='./lucky.svg'></div><div style="margin:auto; font-size: 1.4rem;">Yayy! Your birthday is lucky :)</div>`
+        output_container.style.background = "#32CD32";
     }
     else { 
-        document.querySelector(".output-img").src = "./notlucky.svg";
-        document.querySelector(".output-msg").innerText = "Oops! Your birthday is not lucky :("; 
+        output_div.innerHTML = `<div><img src='./notlucky.svg'></div><div style="margin:auto; font-size: 1.4rem;">Oops! Your birthday is not lucky :(</div>`
+        output_container.style.background = "#EF4444";
+
     }
 }
 
@@ -76,8 +83,10 @@ form.addEventListener('submit', (e)=>{
 
 input_num.addEventListener('click', function(){
     resetError();
+    resetOutput();
 });
 
 input_date.addEventListener('click', function(){
     resetError();
+    resetOutput();
 });
