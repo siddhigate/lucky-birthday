@@ -62,6 +62,9 @@ form.addEventListener('submit', (e)=>{
 
     e.preventDefault();
 
+    resetError();
+    resetOutput();
+
     if(isValidInput() === true){
         let date_val = (date.value).replaceAll('-',"");
 
