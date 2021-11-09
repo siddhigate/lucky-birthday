@@ -49,11 +49,11 @@ function displayResult(isLucky){
     if(isLucky){
         output_div.innerHTML = "";
         output_div.innerHTML = `<div><img src='./lucky.svg'></div><div style="margin:auto; font-size: 1.4rem;">Yayy! Your birthday is lucky :)</div>`
-        output_container.style.background = "#32CD32";
+        // output_container.style.background = "#32CD32";
     }
     else { 
         output_div.innerHTML = `<div><img src='./notlucky.svg'></div><div style="margin:auto; font-size: 1.4rem;">Oops! Your birthday is not lucky :(</div>`
-        output_container.style.background = "#EF4444";
+        // output_container.style.background = "#EF4444";
 
     }
 }
